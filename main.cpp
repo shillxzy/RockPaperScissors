@@ -3,17 +3,8 @@
 
 using namespace std;
 
-
-
-int main()
+void SetNumber(int Number)
 {
-    srand(static_cast<unsigned>(time(NULL)));
-
-    int Number = rand() % 3 + 1;
-
-    string Text;
-    cin >> Text;
-
     if (Number == 1)
     {
         cout << "Rock" << endl;
@@ -26,9 +17,10 @@ int main()
     {
         cout << "Scissors" << endl;
     }
+}
 
-    // --------------------------------------------------------------- //
-
+void GenerateRockPaperScissors(string Text, int Number)
+{
     if (Text == "Rock" && Number == 1)
     {
         cout << "A draw." << endl;
@@ -69,6 +61,19 @@ int main()
     {
         cout << "Something bad." << endl;
     }
+}
+
+int main()
+{
+    srand(static_cast<unsigned>(time(NULL)));
+
+    int Number = rand() % 3 + 1;
+
+    string Text;
+    cin >> Text;
+
+    SetNumber(Number);
+    GenerateRockPaperScissors(Text, Number);
 
 
 
